@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta charset="utf-8" />
+    <title>百度一下，你就知道</title>
+    <style>
+li {
+	float: right;
+	list-style-type: none;
+}
+li a {
+	font-size: 13px;
+	text-decoration: none;
+	color: #000;
+}
+.navcu {
+	font-weight: bolder;
+	margin-top: 5px;
+	margin-right: 21px;
+	text-decoration: underline;
+}
+.navcu:hover {
+	color: blue;
+}
+#more {
+	font-size: 12px;
+	line-height: 24px;
+	display: block;
+	width: 60px;
+	height: 24px;
+	margin-top: 3px;
+	margin-right: 5px;
+	margin-left: 1px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	background: #2988fe;
+}
+#more:hover {
+	margin-left: 0;
+	cursor: default;
+	color: #333;
+	border-top: 1px solid rgb(200,200,200);
+	border-left: 1px solid rgb(200,200,200);
+	background-color: rgb(249,249,249);
+}
+#morejs {
+	position: absolute;
+	top: 43px;
+	right: 13px;
+	display: none;
+	width: 60px;
+	height: 500px;
+	border-bottom: 1px solid rgb(200,200,200);
+	border-left: 1px solid rgb(200,200,200);
+	background-color: rgb(249,249,249);
+}
+.morejsa {
+	font-size: 12px;
+	display: block;
+	width: 50px;
+	margin: 5px auto;
+	text-align: center;
+	text-decoration: none;
+	color: #333;
+	border-top: 1px solid rgb(200,200,200);
+}
+.morejsa:hover {
+	text-decoration: underline;
+	color: #333;
+}
+.morejsb {
+	font-size: 12px;
+	display: block;
+	width: 50px;
+	margin: 0 auto;
+	padding-top: 15px;
+	padding-left: 4px;
+	text-align: center;
+	text-decoration: none;
+	color: #333;
+	border-top: 1px solid rgb(200,200,200);
+}
+.morejsb:hover {
+	text-decoration: underline;
+	color: #333;
+}
+.morejsa img {
+	width: 42px;
+	height: 42px;
+	margin: 5px auto;
+}
+.navxi {
+	margin-right: 20px;
+	text-decoration: underline;
+}
+.navxi:hover {
+	color: blue;
+}
+.hao123 {
+	font-family: 黑体;
+	font-weight: bolder;
+	margin-right: 20px;
+	text-decoration: underline;
+}
+.hao123:hover {
+	color: blue;
+}
+#logo {
+	width: 100%;
+	height: 165px;
+	background-color: white;
+	background-image: url(https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 270px 129px;
+}
+#search {
+	width: 100%;
+	height: 200px;
+	background-color: white;
+}
+.anniu {
+	font-size: 15px;
+	width: 100px;
+	height: 36px;
+	cursor: pointer;
+	color: white;
+	border: none;
+	background: #3285ff;
+}
+.anniu:hover {
+	background-color: blue;
+}
+.shuru {
+	width: 530px;
+	height: 30px;
+}
+.adre {
+	font-size: 12px;
+	color: blue;
+}
+.bot {
+	font-size: 13px;
+	font-style: normal;
+	color: gray;
+}
+</style>
+    <script type="text/javascript">
+function mouseOver()
+{
+    document.getElementById("morejs").style.display = "block"
+    document.getElementById("more").style.backgroundColor = "rgb(249,249,249)"
+    document.getElementById("more").style.color = "#333333"
+    document.getElementById("more").style.borderLeft = "1px solid rgb(200,200,200)"
+    document.getElementById("more").style.borderTop = "1px solid rgb(200,200,200)"
+    document.getElementById("more").style.marginLeft="0px"
+}
+function mouseOut()
+{
+    document.getElementById("morejs").style.display = "none"
+    document.getElementById("more").style.backgroundColor = "#2988fe"
+    document.getElementById("more").style.color = "white"
+    document.getElementById("more").style.border="0"
+    document.getElementById("more").style.marginLeft="1px"
+
+}
+    </script>
+    </head>
+    <body>
+<ul>
+      <li id="more" target="_blank" onmouseover="mouseOver()" onmouseout="mouseOut()">更多产品</li>
+      <li><a class="navxi" href="http://www.baidu.com/gaoji/advanced.html"  target="_blank" style="position:relative;top:5px">设置</a></li>
+      <li><a class="navxi" href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F"  target="_blank" style="position:relative;top:5px">登录</a></li>
+      <li><a class="navcu" href="http://v.baidu.com/"  style="position:relative;top:5px">贴吧</a></li>
+      <li><a class="navcu" href="http://v.baidu.com/"  style="position:relative;top:5px">视频</a></li>
+      <li><a class="navcu" href="http://map.baidu.com/"  style="position:relative;top:5px">地图</a></li>
+      <li><a class="hao123" href="http://www.hao123.com/"  style="position:relative;top:5px">hao123</a></li>
+      <li><a class="navcu" href="http://news.baidu.com/"  style="position:relative;top:5px">新闻</a></li>
+    </ul>
+<div id="morejs" onmouseover="mouseOver()" onmouseout="mouseOut()">
+        <a class="morejsa" href="http://music.baidu.com" target="_blank"><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/music.png?v=md5" >音乐</a> 
+        <a class="morejsa" href="http://image.baidu.com" target="_blank"><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/image.png?v=md5">图片</a> 
+        <a class="morejsa" href="http://zhidao.baidu.com" target="_blank"><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/zhidao.png?v=md5">知道</a> 
+        <a class="morejsa" href="http://wenku.baidu.com" target="_blank"><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/wenku.png?v=md5">文库</a> 
+        <a class="morejsa" href="http://top.baidu.com" target="_blank"><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/bang.png?v=md5">风云榜</a> 
+        <a class="morejsa" href="http://e.baidu.com/" target="_blank"><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/tuiguang.png?v=md5">百度推广</a>
+        <a class="morejsb" href="http://www.baidu.com/more/" target="_blank">全部&gt;&gt;</a> </div>
+<div id="logo"> </div>
+<div id="search">
+      <form action="http://www.baidu.com/baidu">
+    <table bgcolor="#FFFFFF">
+          <tr>
+        <td><input type="text" class="shuru" style="font-size:21px;margin-top:5px;position:absolute;left:364px;top:203px;" name="word">
+              <input type="submit" class="anniu" style="margin-left:-8px;position:absolute;left:906px;top:208px;" value="百度一下"></td>
+      </tr>
+        </table>
+  </form>
+    </div>
+<div> <a class="adre" href="http://www.baidu.com/cache/sethelp/index.html" target="_blank" style="position:relative;left:555px;top:126px;">把百度设为主页</a>
+      <a class="adre" href="http://home.baidu.com/" style="position:relative;left:567px;top:126px">关于百度</a>
+      <a class="adre" href="http://ir.baidu.com/phoenix.zhtml?c=188488&p=irol-homeprofile" style="position:relative;left:577px;top:126px;font-family:黑体;font-size:13px;">About Baidu</a> 
+</div>
+<address class="bot" style="font-family:黑体;position:absolute;left:545px;top:530px;">&copy;2014 Baidu</address>
+<a href="http://home.baidu.com/" class="bot" style="position:relative;left:620px;top:129px">使用百度前必读</a>
+<address class="bot" style="font-family:黑体;position:absolute;left:722px;top:530px;">京ICP证030173号</address>
+</body>
+</html>
