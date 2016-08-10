@@ -1,7 +1,7 @@
 ###UEFI启动引导修复学习笔记（基本万能）(2月25日更新)  
   本帖最后由 Roger抱大树菠萝 于 2015-2-25 11:50 编辑
 
-[原帖地址](http://bbs.pcbeta.com/viewthread-1578044-1-1.html)  
+<a href="http://bbs.pcbeta.com/viewthread-1578044-1-1.html" target="_blank">原帖地址</a>  
 
 致读者<br>
 本文分享的修复方法是比较原始的、基于半手动或者全手动修复UEFI启动
