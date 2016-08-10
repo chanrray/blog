@@ -100,12 +100,108 @@ BCD设置图（图如果看不清可以下载后面附上的附件查看）
 
 小结
 综上所述，能够修复99%的UEFI启动失败问题。
+如果启动后，在看到系统启动的GUI界面（Windows标识）后再出现开机失败的情况，则一般不属于启动###UEFI启动引导修复学习笔记（基本万能）(2月25日更新)  
+  本帖最后由 Roger抱大树菠萝 于 2015-2-25 11:50 编辑
+
+[原帖地址](http://bbs.pcbeta.com/viewthread-1578044-1-1.html)
+致读者<br>
+本文分享的修复方法是比较原始的、基于半手动或者全手动修复UEFI启动
+其优点在于能够根据具体情况作出具体的修复方案，从而能修复99%以上的UEFI启动问题，故称基本万能
+相比起无论什么原因都用EFI引导修复工具鼓捣一通，本文分享的修复方案更加灵活
+同时，通过本文分享的修复方案，你对UEFI启动有更加深入的理解，让大家从此不再畏惧UEFI
+
+注明
+
+本学习笔记是本人学习无忧启动论坛UEFI区版主2011hiboy的帖子以及视频教程后整理所得，
+我主要做了一下搬运工的工作，帖子提出的修复方法都是由2011hiboy提出，故在此向2011hiboy表示感谢！
+由于本文原理部分也是转自2011hiboy的帖文，其宗旨是分享学习技术，
+希望景友们二次转载时表明原始出处：[无忧bbs](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=303679)
+
+
+
+
+前提
+以下所有bcdboot命令在PE中操作完成，且要求PE是以UEFI模式启动的；如果景友们使用非UEFI启动的PE，那么bcdboot命令中还要用/f uefi参数来指定启动类型是传统BIOS启动。
+
+具体关于bcdboot命令的用法，可以打开CMD，然后用以下命令查看：
+`bcdboot /?`
+
+
+
+#####板块1：直截了地先摆上这篇文章的核心内容，如何半手动或手动修复UEFI启动！（不想了解原理的可以只看这部分）
+
+UEFI系统启动引导出错分类示意图如下图。
+
+
+
+<img src="https://github.com/chenrui95/blog/raw/master/imagecache/qzone-blog/uefi-xiufu-wannengbiji/修复情况分解图.jpg" width = "600" height = "400">
+
+
+
+A模块
+Bcdboot命令修复成功的前提是：ESP分区存在且系统文件完好无损。
+
+
+系统文件完好无损的含义：
+C:\Windows\Boot目录下的EFI文件夹存在且里面的文件完好无损
+
+系统文件部分丢失的含义
+C:\Windows\Boot目录下的EFI文件夹里面的文件有缺失
+
+A-1（系统文件完好无损）修复方法
+修复命令：
+`bcdboot C:\Windows /l zh-CN`
+
+
+A-2（系统文件部分丢失）修复方法
+先按照系统对应关系把正常系统中的C:\Windows\Boot目录下的EFI文件夹复制出来，还原到本机系统盘的相同位置；
+然后用以下修复命令修复：
+`bcdboot C:\Windows /l zh-CN`
+
+
+
+B模块
+1、ESP分区分析（这一部分的详细解释将会在板块2：UEFI启动原理概述详细说明）
+a)  ESP分区中的  \EFI\Boot\bootx64.efi  是计算机默认引导，即该文件若存在，计算机默认启动项（硬盘启动）即可使用；
+b)  ESP分区中的  \EFI\Microsoft\Boot\bootmgfw.efi  是Windows默认引导文件，当该文件存在，且ESP分区中的所有目录设置正确、bootx64.efi存在时，Windows Boot Manager启动项才可使用。
+
+
+ESP分区目录树结构如下图。
+
+
+ <img src="https://github.com/chenrui95/blog/raw/master/imagecache/qzone-blog/uefi-xiufu-wannengbiji/espshu.jpg" width="600" height="400">
+
+
+PS：
+对于Windows来说，bootx64.efi和C:\Windows\Boot\EFI里面的bootmgfw.efi是内容相同但文件名字不同的两个文件，因此bootx64.efi可以通过正常系统下的C:\Windows\Boot\EFI\bootmgfw.efi重命名为bootx64.efi获得。
+
+
+
+2、B模块修复方法
+对于B模块的修复，这里只讲对ESP分区的修复，修复后即可用A模块中的A-1或A-2修复方法来修复UEFI引导。
+B模块的修复方法如下：
+1.  重建一个260MB的FAT32分区（ESP分区的本质就是一个FAT32分区）并挂载，设挂载的盘符为H:
+2.  接着用以下命令修复计算机默认引导
+`bcdboot C:\Windows /s H: /l zh-CN`
+
+
+
+补充（手动修复UEFI计算机默认引导教程）
+1.  用diskpart命令挂载ESP分区；
+2.  在挂载后的ESP分区建立如图2所示的文件目录；
+3.  从对应系统中的C:\Windows\Boot\EFI中提取bootmgfw.efi到挂载后的ESP分区中的\EFI\Boot中，
+并重命名为：bootx64.efi；
+4.  用Bootice软件在ESP分区中的\EFI\Microsoft\Boot中新建BCD，并设置为如下图所示的状态；
+5.  重启完成修复。
+
+BCD设置图
+ <img src="https://github.com/chenrui95/blog/raw/master/imagecache/qzone-blog/uefi-xiufu-wannengbiji/bcd设置.jpg" width="600" height="600">
+
+
+小结
+综上所述，能够修复99%的UEFI启动失败问题。
 如果启动后，在看到系统启动的GUI界面（Windows标识）后再出现开机失败的情况，则一般不属于启动引导问题，而是系统有别的损坏等。
 
-
-
-附件下载
-本文的PDF版本：   UEFI启动引导修复学习笔记.rar (193.88 KB, 下载次数: 304) 
 
 
 
@@ -121,8 +217,11 @@ BCD设置图（图如果看不清可以下载后面附上的附件查看）
 
 标题简要说明：
 Windows Boot Manager  --------安装完Windows系统后而出现的启动选项（相关的信息存储在NVRAM），可以删除和建立和bcdboot.exe有关
+
 Bootmgfw.efi  --------引导Windows的引导文件  
+
 Bootx64.efi ---------UEFI的必需引导文件
+
 bcdboot.exe--------修复UEFI启动的命令行工具，微软出品
 
 
@@ -178,8 +277,10 @@ part 3
 
 ::原生ESP分区引导文件分析
 
-我为此安装了微软win8 x64的操作系统，分析ESP分区的全部文件，分别存在： 
-efi\boot\bootx64.efi 
+我为此安装了微软win8 x64的操作系统，分析ESP分区的全部文件，分别存在：  
+
+efi\boot\bootx64.efi   
+
 efi\microsoft\boot\bootmgfw.efi
 
 我们不禁思考：哪个文件测试真正用到的呢？计算机默认启动哪个呢？系统默认启动哪个呢？
