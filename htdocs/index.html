@@ -1,0 +1,327 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>首页-个人博客</title>
+<meta name="keywords" content="个人博客" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/index.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<script type="text/javascript" src="js/advsmove.js"></script>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="count.php"></script>
+<link rel="stylesheet" type="text/css" href="assets/waifu.css"/>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<style>
+#zhengwen{
+background-image:url(images/gd.jpg);
+height:450px;
+width:950px;
+color:black;
+}
+#zhengwen a{
+color:black;}
+#zhengwen a:hover{
+color:blue;}
+#footer { height:20px;width:75%; text-align:center;padding:10px 0; position:fixed;bottom:0px;left:0px;margin-left:10%; margin-right:15%;}
+#box{margin-top:12%;width:80px;height:148px;background:#fef4eb;padding:5px;margin-left:1%;}
+#box .title{height:100%;background:#f60;margin:0;color:blue;text-align:center;}
+#box .title2{font-size:0.8em;color:yellow;}
+
+
+.anniu {
+	font-size: 15px;
+	width: 100px;
+	height: 36px;
+	cursor: pointer;
+	color: white;
+	border: none;
+	background: #3285ff;
+	
+}
+.anniu:hover {
+	background-color: blue;
+}
+.shuru {
+	width: 530px;
+	height: 34px;
+}
+
+
+</style>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<!--
+<div id="box">
+	<h2 class="title"></br>AD</br>for</br>sale</br><span class="title2">可拖拽</span></h2>
+	
+</div>
+-->
+    <!--header start-->
+    <div id="header">
+      <div style="float:right;position: relative;top:40px;right:30px">
+	  <b>访问量：</b>
+      <script type="text/javascript" >  
+    document.write(test); 
+</script> &nbsp;&nbsp;&nbsp;&nbsp;</div>
+	  <h1>王之叹息</h1>
+      <p style="margin-top: 10px">&nbsp;&nbsp;&nbsp;可笑我命由我不由天</p>
+    </div>
+     <!--header end-->
+
+    <!--nav-->
+     <div id="nav">
+        <ul>
+         <li><a href="index.html">网址收藏</a></li>
+         <li><a href="aboutme.html">个人简介</a></li>
+         <li><a href="friendurl.html">友情链接</a></li>
+         <li><a href="postlog.html">博客日志</a></li>
+         <li><a href="photo.html">私密相册</a></li>
+         <li><a href="password.html">密码系统</a></li>
+         <li><a href="guestbook.html">留言板</a></li>
+         <div class="clear"></div>
+        </ul>
+      </div>
+       <!--nav end-->
+
+ 
+	<div id="search">
+      <form action="https://oldwang.pro" target="_blank">
+    <table style="margin:auto;">
+          <tr >
+        <td>
+			<input type="text" class="shuru" style="font-size:21px;" name="q">
+            <input type="submit" class="anniu" style="margin-left:-3px;transform:translateY(-7%);" value="老王一下">
+		</td>
+      </tr>
+        </table>
+	</form>
+    </div>
+
+
+    <!--content start-->
+  <div  id="content">
+         <!--left-->
+         <div id="zhengwen">
+		
+		<a target="_blank" href="http://www.w3school.com.cn/" >w3c :&nbsp;&nbsp;&nbsp;www.w3school.com.cn</a>
+         <br/><br/>
+		
+		 <a href="https://cloud.lanfan.co/#/register?code=blznor3U" target="_blank">蓝帆ss :&nbsp;&nbsp;&nbsp;https://cloud.lanfan.co</a>
+		 
+		 <br/><br/>
+		 <a href="http://www.iruanmi.com/reinstall-win8-oem-os/" target="_blank">win8.1自动重新激活</a>
+		 <br/><br/>
+		 自建SS帐号，30r/mon
+                 <br/><br/>
+      
+		 <a href="https://oldwang.pro:8080/download/" target="_blank">破解版pc百度云安卓版讯雷</a>
+</div> </div> 
+    <!--content end-->
+<div id="footer">Copyright © chenrui 2017&nbsp;All Rigths Reserved&nbsp;</div>
+   
+    <script  type="text/javascript" src="js/nav.js"></script>
+
+ 
+ <!-- waifu-tips.js 依赖 JQuery 库 -->
+    <script src="assets/jquery.min.js?v=3.3.1"></script>
+    
+    <!-- 实现拖动效果，需引入 JQuery UI -->
+    <script src="assets/jquery-ui.min.js?v=1.12.1"></script>
+    
+    <div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+    </div>
+        
+    <script src="assets/waifu-tips.min.js?v=1.4"></script>
+    <script src="assets/live2d.min.js?v=1.0.5"></script>
+    <script type="text/javascript">
+        /* 可直接修改部分参数 */
+  //      live2d_settings['modelId'] = 1;                  // 默认模型 ID
+  //      live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
+  //      live2d_settings['modelStorage'] = false;         // 不储存模型 ID
+        live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
+        live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
+  //      live2d_settings['waifuSize'] = '600x535';        // 看板娘大小
+  //      live2d_settings['waifuTipsSize'] = '570x150';    // 提示框大小
+  //      live2d_settings['waifuFontSize'] = '30px';       // 提示框字体
+  //      live2d_settings['waifuToolFont'] = '36px';       // 工具栏字体
+  //      live2d_settings['waifuToolLine'] = '50px';       // 工具栏行高
+  //     live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
+       live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
+        /* 在 initModel 前添加 */
+        initModel("assets/waifu-tips.json?v=1.4.2")
+    </script>
+ 
+ 
+ 
+ <script type="text/javascript">
+    /* 鼠标特效 */
+    var a_idx = 0;
+    jQuery(document).ready(function($) {
+        $("body").click(function(e) {
+            var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+            var $i = $("<span />").text(a[a_idx]);
+            a_idx = (a_idx + 1) % a.length;
+            var x = e.pageX,
+            y = e.pageY;
+            $i.css({
+                "z-index": 9999999,
+                "top": y - 20,
+                "left": x,
+                "position": "absolute",
+                "font-weight": "bold",
+                "color": "#ff6651"
+            });
+            $("body").append($i);
+            $i.animate({
+                "top": y - 180,
+                "opacity": 0
+            },
+            1500,
+            function() {
+                $i.remove();
+            });
+        });
+    });
+    </script>
+
+	<canvas id="Snow"></canvas>
+<script async>
+    if(true){
+        (function() {
+            var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||
+            function(callback) {
+                window.setTimeout(callback, 1000 / 60);
+            };
+            window.requestAnimationFrame = requestAnimationFrame;
+        })();
+        
+        (function() {
+            var flakes = [],
+                canvas = document.getElementById("Snow"),
+                ctx = canvas.getContext("2d"),
+                flakeCount = 200,
+                mX = -100,
+                mY = -100;
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            function snow() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+                for (var i = 0; i < flakeCount; i++) {
+                    var flake = flakes[i],
+                        x = mX,
+                        y = mY,
+                        minDist = 150,
+                        x2 = flake.x,
+                        y2 = flake.y;
+            
+                    var dist = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)),
+                        dx = x2 - x,
+                        dy = y2 - y;
+            
+                    if (dist < minDist) {
+                        var force = minDist / (dist * dist),
+                            xcomp = (x - x2) / dist,
+                            ycomp = (y - y2) / dist,
+                            deltaV = force / 2;
+            
+                        flake.velX -= deltaV * xcomp;
+                        flake.velY -= deltaV * ycomp;
+            
+                    } else {
+                        flake.velX *= .98;
+                        if (flake.velY <= flake.speed) {
+                            flake.velY = flake.speed
+                        }
+                        flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
+                    }
+            
+                    ctx.fillStyle = "rgba(255,255,255," + flake.opacity + ")";
+                    flake.y += flake.velY;
+                    flake.x += flake.velX;
+                        
+                    if (flake.y >= canvas.height || flake.y <= 0) {
+                        reset(flake);
+                    }
+            
+                    if (flake.x >= canvas.width || flake.x <= 0) {
+                        reset(flake);
+                    }
+            
+                    ctx.beginPath();
+                    ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                requestAnimationFrame(snow);
+            };
+            
+            function reset(flake) {
+                flake.x = Math.floor(Math.random() * canvas.width);
+                flake.y = 0;
+                flake.size = (Math.random() * 3) + 2;
+                flake.speed = (Math.random() * 1) + 0.5;
+                flake.velY = flake.speed;
+                flake.velX = 0;
+                flake.opacity = (Math.random() * 0.5) + 0.3;
+            }
+            
+            function init() {
+                for (var i = 0; i < flakeCount; i++) {
+                    var x = Math.floor(Math.random() * canvas.width),
+                        y = Math.floor(Math.random() * canvas.height),
+                        size = (Math.random() * 3) + 2,
+                        speed = (Math.random() * 1) + 0.5,
+                        opacity = (Math.random() * 0.5) + 0.3;
+            
+                    flakes.push({
+                        speed: speed,
+                        velY: speed,
+                        velX: 0,
+                        x: x,
+                        y: y,
+                        size: size,
+                        stepSize: (Math.random()) / 30 * 1,
+                        step: 0,
+                        angle: 180,
+                        opacity: opacity
+                    });
+                }
+            
+                snow();
+            };
+            
+            document.addEventListener("mousemove", function(e) {
+                mX = e.clientX,
+                mY = e.clientY
+            });
+            window.addEventListener("resize", function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+            init();
+        })();
+    }
+</script>
+	
+	
+</body>
+</html>

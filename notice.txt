@@ -1,0 +1,4 @@
+1.chmod777 count.txt
+2.config.php change phpmyadmin passwd
+3.ban url phpmyadmin /opt/lampp/etc/extra/httpd-xampp.conf allow from local/all
+4.mysql data /opt/lampp/var/mysql

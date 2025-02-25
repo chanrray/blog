@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>博客日志-个人博客</title>
+<meta name="keywords" content="个人博客" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/index.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/animate.css"/>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<style>
+#backre{float:right;
+height:28px;
+display:inline;
+}
+#backre:hover{
+color:blue;
+text-decoration:none;}
+#backre2{
+position:relative;
+top:-8px;}
+</style>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<script type="text/javascript">
+function SetWinHeight(obj) 
+{ 
+var win=obj; 
+if (document.getElementById) 
+{ 
+if (win && !window.opera) 
+{ 
+if (win.contentDocument && win.contentDocument.body.offsetHeight) 
+win.height = win.contentDocument.body.offsetHeight; 
+else if(win.Document && win.Document.body.scrollHeight) 
+win.height = win.Document.body.scrollHeight; 
+} 
+}
+
+} 
+
+</script>
+</head>
+
+<body>
+      <!--header start-->
+    <div id="header">
+     <h1>王之叹息</h1>
+      <p style="margin-top: 10px">&nbsp;&nbsp;&nbsp;可笑我命由我不由天！</p>
+    </div>
+     <!--header end-->
+    <!--nav-->
+     <div id="nav">
+        <ul>
+         <li><a href="index.html">网址收藏</a></li>
+         <li><a href="aboutme.html">个人简介</a></li>
+         <li><a href="friendurl.html">友情链接</a></li>
+         <li><a href="postlog.html">博客日志</a></li>
+         <li><a href="photo.html">私密相册</a></li>
+         <li><a href="password.html">密码系统</a></li>
+         <li><a href="guestbook.html">留言板</a></li>
+         <div class="clear"></div>
+        </ul>
+      </div>
+       <!--nav end-->
+    <!--content start-->
+    <div id="say">
+        <div class="weizi">
+           <div class="wz_text">当前位置：<a href="index.html">首页</a>><h1>博客日志</h1><a href="postlog.html" id="backre"><span id="backre2">返回标题栏</span><img src="images/backre2.png" width="28px" height="28px" style="display:inline;"></img></a></div>
+         </div>
+         <div id="say_content">
+		 <iframe src="logtitle.html" allowtransparency="true" style="background-color=transparent" title="test" frameborder="0" width="920"  scrolling="no" id="win" name="win" onload="Javascript:SetWinHeight(this)"></iframe> 
+     </div>
+	
+	</div>
+    <!--content end-->
+    <script  type="text/javascript" src="js/nav.js"></script>
+</body>
+</html>
+

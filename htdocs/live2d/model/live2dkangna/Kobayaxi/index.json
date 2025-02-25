@@ -1,0 +1,41 @@
+{
+	"version":"Sample 1.0.0",
+	"model":"Kobayaxi.moc",
+	"textures":[
+		"texture_00/texture_00.png"
+	],
+	"layout":{
+        "center_x": 0,
+        "center_y": 0.08,
+        "width": 2,
+        "height": 2
+    },
+	"physics":"physics.json",
+	"pose":"pose.json",
+	"project_settings":"Kobayaxi.settings.json",
+	"name":"Kobayaxi",
+	"hit_areas_custom":{
+        "head_x":[-0.3, 1.12],
+        "head_y":[0.26, 0.56],
+        "body_x":[-0.41, 0.58],
+        "body_y":[0.46, -1.12]
+    },
+	"motions":{
+        "idle":[
+			{"file":"motions/haru_idle_01.mtn"},
+			{"file":"motions/haru_idle_02.mtn"},
+			{"file":"motions/haru_idle_03.mtn"}
+        ],
+        "flick_head":[
+			{"file":"motions/haru_m_01.mtn"},
+			{"file":"motions/haru_m_02.mtn"},
+			{"file":"motions/haru_m_03.mtn"}
+        ],
+        "tap_body":[
+			{"file":"motions/haru_normal_01.mtn","sound": "motions/haru_normal_01.mp3"},
+			{"file":"motions/haru_normal_02.mtn","sound": "motions/haru_normal_02.mp3"},
+			{"file":"motions/haru_normal_03.mtn","sound": "motions/haru_normal_03.mp3"}
+        ]
+       
+    }	
+}

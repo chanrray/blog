@@ -1,0 +1,18 @@
+version: '3'
+services:
+  http_mysql:
+    image: xampp:5.6.19
+    ports:
+      - 15881:80
+    restart: unless-stopped
+    container_name: xampp
+    networks:
+      caddy:
+        ipv4_address: 172.19.0.36
+    volumes:
+      - /home/docker_share/xampp5.6.19:/home
+    command: ["/bin/sh", "-c", "/opt/lampp/lampp start & tail -f /dev/null" ]
+
+networks:
+  caddy:
+    external: true

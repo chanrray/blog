@@ -1,0 +1,70 @@
+{
+	"version":"Sample 1.0.0",
+	"model":"umaru.moc",
+	"textures":[
+		"texture_00/texture_00.png"
+	],
+	"physics":"physics.json",
+	"layout":
+	{
+		"width":1.5,
+		"height":1.5,
+		"center_x":0,
+		"center_y":0.25
+	},
+	"hit_areas":
+	[
+		{"name":"head", "id":"D_REF.PT_HEAD"},
+		{"name":"body", "id":"D_REF.PT_BODY"}
+	],
+	"hit_areas_custom":{
+        "head_x":[0.3, -0.9],
+        "head_y":[0.19, -0.2],
+        "body_x":[-0.3, -0.25],
+        "body_y":[0.3, -0.9]
+  },
+	"motions":
+	{
+		"idle":
+		[
+			{ "file":"motions/umaru_idle.mtn" ,"fade_in":1000, "fade_out":1000, "expressions":"F00" }
+		],
+    "tap_body":
+		[
+			{ "file":"motions/rita_Live2D_001.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/01.wav" },
+			{ "file":"motions/rita_Live2D_002.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/02.wav" },
+			{ "file":"motions/rita_Live2D_003.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/03.wav" },
+			{ "file":"motions/rita_Live2D_004.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/04.wav" },
+			{ "file":"motions/rita_Live2D_005.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/05.wav" },
+			{ "file":"motions/rita_Live2D_006.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/06.wav" },
+			{ "file":"motions/rita_Live2D_007.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/07.wav", "fade_in":500, "fade_out":1000},
+			{ "file":"motions/rita_Live2D_008.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/08.wav", "fade_in":500, "fade_out":1000},
+			{ "file":"motions/rita_Live2D_009.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/09.wav", "fade_in":500, "fade_out":1000},
+			{ "file":"motions/rita_Live2D_010.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/10.wav" },
+			{ "file":"motions/rita_Live2D_011.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/11.wav" },
+			{ "file":"motions/rita_Live2D_012.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/12.wav", "fade_in":500, "fade_out":1000},
+			{ "file":"motions/rita_Live2D_013.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/13.wav", "fade_in":500, "fade_out":500},
+			{ "file":"motions/rita_Live2D_014.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/14.wav" },
+			{ "file":"motions/rita_Live2D_015.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/15.wav" },
+			{ "file":"motions/rita_Live2D_016.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/16.wav" },
+			{ "file":"motions/rita_Live2D_017.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/17.wav" },
+			{ "file":"motions/rita_Live2D_018.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/18.wav" },
+			{ "file":"motions/rita_Live2D_019.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/19.wav" },
+			{ "file":"motions/rita_Live2D_020.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/20.wav", "fade_in":500, "fade_out":1000},
+			{ "file":"motions/rita_Live2D_021.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/21.wav" },
+			{ "file":"motions/rita_Live2D_022.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/22.wav" },
+			{ "file":"motions/rita_Live2D_023.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/23.wav" },
+			{ "file":"motions/rita_Live2D_024.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/24.wav" },
+			{ "file":"motions/rita_Live2D_025.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/25.wav" },
+			{ "file":"motions/rita_Live2D_026.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/26.wav" },
+			{ "file":"motions/rita_Live2D_027.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/27.wav" },
+			{ "file":"motions/rita_Live2D_028.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/28.wav" },
+			{ "file":"motions/rita_Live2D_029.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/29.wav" },
+			{ "file":"motions/rita_Live2D_030.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/30.wav" },
+			{ "file":"motions/rita_Live2D_031.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/31.wav" },
+			{ "file":"motions/rita_Live2D_032.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/32.wav" },
+			{ "file":"motions/rita_Live2D_033.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/33.wav" },
+			{ "file":"motions/rita_Live2D_034.mtn", "sound": "../model/live2dxiaomai/xiaomai/voice/34.wav" }
+		]
+	}
+}

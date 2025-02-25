@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>日志-80端口被NT kernel & System 占用pid 4</title>
+<meta name="keywords" content="80端口被NT kernel & System 占用pid 4" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="../css/postlog.css"/>
+<link href="../css/SyntaxHighlighter.css" rel="stylesheet">
+<style>
+body{
+background-color:transparent;
+}
+</style>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<style>
+#main{
+border:1px solid white;}
+</style>
+</head>
+
+<body>
+<div id="main">
+	<h2 align="center">80端口被NT kernel & System 占用pid 4</h2>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;转载自&nbsp;&nbsp;<a href="http://www.2cto.com/os/201111/111269.html" target="_blank">http://www.2cto.com/os/201111/111269.html</a></br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前段时间停止了Apache，结果在打开的时候发现无法打开，80端口被占用，于是win+r 运行cmd</br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输入 netstat -ano
+	</br>
+	<img src="../images/postlog/1/a.jpg" style="margin-left:80px;"></img>
+<!-- 代码模板 <div class="dp-highlighter">
+	<ol start="1" class="dp-j">
+	<li>aaa黑色</li>
+	<li>ccc<span class="string">ccc蓝色ccc</span></li>  
+	<li><span class="imp">zzz红色</span></li>
+	</ol>
+</div>  -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以看到80端口被PID4占用，于是打开任务管理器-进程-查看，选择列，勾选PID</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以看到pid 4 的被NT kernel & System 占用</br>
+<img src="../images/postlog/1/b.jpg" style="margin-left:80px;"></img>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在网上找了很久找到解决方案</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.cameroncooke.com/2009/01/25/windows-7-uses-port-80-and-makes-it-impossible-to-install-apache-solution/comment-page-1/#comments" target="_blank">http://www.cameroncooke.com/2009/01/25/windows-7-uses-port-80-and-makes-it-impossible-to-install-apache-solution/comment-page-1/#comments</a></br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;翻译如下：</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该进程是Http.sys。它是http API的驱动组件，Http栈服务器。如果该端口被Http.sys占用，说明一些正在使用http.sys的应用程序在运行。这就是阻止Apache运行的原因，因为Http.sys占用着80端口。我们提供了一种应用程序的机制来帮助控制端口共享，但是我需要调查导致你遇到这种困难的是什么特殊应用程序。如果你能提供给我们“netsh http show servicestate”这条命令的输出结果，我就能找出是哪个应用程序在使用Http.sys。在你禁用Http.sys之前，请按照下面的步骤来运行命令：</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;sc config http stat = demand</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;&nbsp;reboot</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;&nbsp;run the command(netsh http show servicestat)as administrator</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在你使用这个命令之前，你可以按照下面步骤禁用http.sys：</br>
+
+<div class="dp-highlighter">
+	<ol start="1" class="dp-j">
+	<li>net stop http</li>
+	<li>Sc config http start= disabled</li>
+	</ol>
+</div> 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;于是运行 net stop http</br>
+<img src="../images/postlog/1/c.jpg" style="margin-left:80px;"></img>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按 y 确定</br>
+<img src="../images/postlog/1/d.jpg" style="margin-left:80px;"></img>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;再运行 Sc config http start= disabled</br>
+<img src="../images/postlog/1/e.jpg" style="margin-left:80px;"></img>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好了，现在启动Apache，可以启动了。</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在查看一下netstat -ano</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发现pid 4占用了445端口</br>
+</br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后续：</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后来换了个环境运行报错，可能是端口被占用。</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看发现没有占用端口，更换端口监听也是同样错误。</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日志文件空空如也。网上查到一个偏方，用cmd运行apache，</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;果然出现报错信息，跟php有关。切换php版本发现了问题所在：</br>
+<img src="../images/postlog/1/f.png" style="margin-left:80px;"></img>
+
+
+
+
+
+
+
+
+
+
+</div>  
+</body>
+</html>

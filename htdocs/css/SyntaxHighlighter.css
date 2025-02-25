@@ -1,0 +1,46 @@
+.dp-highlighter
+{
+  font-family: Monaco, DejaVu Sans Mono, Bitstream Vera Sans Mono, Consolas, Courier New, monospace;
+  font-size: 12px;
+  background-color: transparent;
+  width: 97%;
+  overflow: auto;
+  margin-left: 9px;
+  padding: 1px; /* adds a little border on top when controls are hidden */
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.dp-highlighter ol 
+{
+  border: 1px solid #D1D7DC;  
+  list-style: decimal; /* for ie */
+  background-color: #fff;
+  margin: 0px 0px 1px 0px; /* 1px bottom margin seems to fix occasional Firefox scrolling */
+  padding: 2px 0;
+  color: #2B91AF;
+}
+
+.dp-highlighter ol li
+{
+  color: Black;
+  border-left: 1px solid #D1D7DC;
+  background-color: #FAFAFA;
+  padding-left: 10px;
+  line-height: 18px;
+  margin: 0 0 0 38px;
+}
+
+
+.dp-highlighter ol li span 
+{
+  color: Black;
+}
+
+/* Styles for the tools */
+/* About dialog styles */
+/* Language specific styles */
+.dp-highlighter .string { color: blue; }
+.dp-highlighter .imp { color: red; }
+
+
