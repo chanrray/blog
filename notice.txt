@@ -1,4 +1,6 @@
+version:xampp-linux-x64-5.6.19-0-installer.run Apache/2.4.18 10.1.10-MariaDB PHP 5.6.19
+
 1.chmod777 count.txt
-2.config.php change phpmyadmin passwd
-3.ban url phpmyadmin /opt/lampp/etc/extra/httpd-xampp.conf allow from local/all
-4.mysql data /opt/lampp/var/mysql
+2.config.php phpmyadmin/mysql passwd
+3.ban url:phpmyadmin /opt/lampp/etc/extra/httpd-xampp.conf allow from local/all
+4.mysql data chown -R 999:999

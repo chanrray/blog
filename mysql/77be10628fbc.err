@@ -1,0 +1,46 @@
+2025-09-15 10:31:41 64 mysqld_safe Starting mysqld daemon with databases from /opt/lampp/var/mysql
+2025-09-15 10:31:41 140274658981696 [Note] Using unique option prefix 'key_buffer' is error-prone and can break in the future. Please use the full name 'key_buffer_size' instead.
+2025-09-15 10:31:41 140274658981696 [Note] /opt/lampp/sbin/mysqld (mysqld 10.1.10-MariaDB) starting as process 209 ...
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: The InnoDB memory heap is disabled
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Memory barrier is not used
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Compressed tables use zlib 1.2.8
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Using SSE crc32 instructions
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Initializing buffer pool, size = 16.0M
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Completed initialization of buffer pool
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Highest supported file format is Barracuda.
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: The log sequence numbers 1764087 and 1764087 in ibdata files do not match the log sequence number 1764107 in the ib_logfiles!
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Database was not shutdown normally!
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Starting crash recovery.
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Restoring possible half-written data pages 
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: from the doublewrite buffer...
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: 128 rollback segment(s) are active.
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB: Waiting for purge to start
+2025-09-15 10:31:41 140274658981696 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.26-76.0 started; log sequence number 1764107
+2025-09-15 10:31:41 140274252617472 [Note] InnoDB: Dumping buffer pool(s) not yet started
+2025-09-15 10:31:41 140274658981696 [Note] Plugin 'FEEDBACK' is disabled.
+2025-09-15 10:31:41 140274658981696 [Note] Recovering after a crash using tc.log
+2025-09-15 10:31:41 140274658981696 [Note] Starting crash recovery...
+2025-09-15 10:31:41 140274658981696 [Note] Crash recovery finished.
+2025-09-15 10:31:41 140274658981696 [Note] Server socket created on IP: '::'.
+2025-09-15 10:31:41 140274658981696 [ERROR] mysqld: Table './mysql/user' is marked as crashed and should be repaired
+2025-09-15 10:31:41 140274658981696 [Warning] Checking table:   './mysql/user'
+2025-09-15 10:31:41 140274658981696 [ERROR] mysql.user: 1 client is using or hasn't closed the table properly
+2025-09-15 10:31:41 140274658981696 [ERROR] mysqld: Table './mysql/db' is marked as crashed and should be repaired
+2025-09-15 10:31:41 140274658981696 [Warning] Checking table:   './mysql/db'
+2025-09-15 10:31:41 140274658981696 [ERROR] mysql.db: 1 client is using or hasn't closed the table properly
+2025-09-15 10:31:41 140274658981696 [ERROR] mysqld: Table './mysql/tables_priv' is marked as crashed and should be repaired
+2025-09-15 10:31:41 140274658981696 [Warning] Checking table:   './mysql/tables_priv'
+2025-09-15 10:31:41 140274658981696 [ERROR] mysql.tables_priv: 1 client is using or hasn't closed the table properly
+2025-09-15 10:31:41 140274658981696 [ERROR] mysqld: Table './mysql/columns_priv' is marked as crashed and should be repaired
+2025-09-15 10:31:41 140274658981696 [Warning] Checking table:   './mysql/columns_priv'
+2025-09-15 10:31:41 140274658981696 [ERROR] mysql.columns_priv: 1 client is using or hasn't closed the table properly
+2025-09-15 10:31:41 140274658981696 [ERROR] mysqld: Table './mysql/procs_priv' is marked as crashed and should be repaired
+2025-09-15 10:31:41 140274658981696 [Warning] Checking table:   './mysql/procs_priv'
+2025-09-15 10:31:41 140274658981696 [ERROR] mysql.procs_priv: 1 client is using or hasn't closed the table properly
+2025-09-15 10:31:41 140274658981696 [Note] /opt/lampp/sbin/mysqld: ready for connections.
+Version: '10.1.10-MariaDB'  socket: '/opt/lampp/var/mysql/mysql.sock'  port: 3306  Source distribution
+2025-09-15 10:32:02 140274572289792 [ERROR] mysqld: Table './board/sb_admin' is marked as crashed and should be repaired
+2025-09-15 10:32:02 140274572289792 [Warning] Checking table:   './board/sb_admin'
