@@ -5,7 +5,7 @@
 |	文件名称：config.php
 +-----------------------------------------------------------------------
 */
-define('WEB_TITLE','Simple Board - 简易留言板1.0');	#留言板名称
+define('WEB_TITLE','老王的留言板');	#留言板名称
 define('WEB_SERVER','localhost');	#数据库服务器
 define('WEB_USER','root');	#数据库用户名
 define('WEB_PWD','chenrui19950501$');	#数据库密码

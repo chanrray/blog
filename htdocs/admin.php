@@ -46,7 +46,7 @@
 				}else{
 					$("#admininfo").addClass('adminsuccess').fadeIn('slow').html(data[1]);
 					setTimeout(function() {
-						location.replace("phototest.html");
+						location.replace("default.php");
 					}, 1500);
 				}
 			}
@@ -60,7 +60,7 @@
 <span style="color:red"></span>
 
 </div>  
-<div id="adminlogin">
+<div id="adminlogin" style="min-height: 100px;">
 	<form>
 	<div class="posttip"><span style="float:right;" id="admininfo"></span></div>
 	<div class="postarea">
@@ -72,10 +72,11 @@
 		<tr>
 			<td width="60px" align="right"><label for="content">密&nbsp;&nbsp;&nbsp;码：</label></td>
 			<td><input type="password" name="adminpwd" id="adminpwd" value="" /></td>
+			<td><input name="Submit" type="button" class="bt" id="bt_login" value="普通用户点此进入，无需输入密码" onclick="this.value='正在登录中,请稍等'; window.location.href='default.php';" /></td>
 		</tr>
 		<tr>
 			<td width="60px"></td>
-			<td><input name="Submit" type="button" class="bt" id="bt_login" value="登陆" onclick="return ckLoginForm();" /></td>
+			<td><input name="Submit" type="button" class="bt" id="bt_login" value="管理员登陆" onclick="return ckLoginForm();" /></td>
 		</tr>
 		</table>
 	</div>
