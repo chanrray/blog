@@ -10,9 +10,9 @@ services:
       caddy:
         ipv4_address: 172.19.0.36
     volumes:
-      - /home/docker_share/xampp5.6.19/htdocs:/home/htdocs
-      - /home/docker_share/xampp5.6.19/mysql:/opt/lampp/var/mysql
-      - /home/docker_share/xampp5.6.19/httpd-xampp.conf:/opt/lampp/etc/extra/httpd-xampp.conf
+      - /home/docker_share/blog/htdocs:/home/htdocs
+      - /home/docker_share/blog/mysql:/opt/lampp/var/mysql
+      - /home/docker_share/blog/httpd-xampp.conf:/opt/lampp/etc/extra/httpd-xampp.conf
     command: ["/bin/sh", "-c", "/opt/lampp/lampp start & tail -f /dev/null" ]
 
 networks:
