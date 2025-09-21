@@ -1,0 +1,23 @@
+FROM ubuntu:18.04
+
+COPY xampp-linux-x64-5.6.19-0-installer.run /tmp/
+COPY htdocs.tar.gz /tmp
+COPY mysql.tar.gz /tmp
+
+RUN apt-get update && apt-get install net-tools
+
+RUN chmod +x /tmp/xampp-linux-x64-5.6.19-0-installer.run && \
+    /tmp/xampp-linux-x64-5.6.19-0-installer.run --mode unattended --disable-components xampp_developer_files && \
+    rm -f /tmp/xampp-linux-x64-5.6.19-0-installer.run && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /opt/lampp/htdocs && \
+    rm -rf /opt/lampp/var/mysql && \
+    sed -i 's/Require local/Require all denied/g' /opt/lampp/etc/extra/httpd-xampp.conf && \
+    tar -xzf /tmp/htdocs.tar.gz -C /opt/lampp/ && \
+    tar -xzf /tmp/mysql.tar.gz -C /opt/lampp/var/ && \
+    rm -f /tmp/htdocs.tar.gz && \
+    rm -f /tmp/mysql.tar.gz
+
+EXPOSE 80
+CMD /opt/lampp/lampp start && tail -f /dev/null
