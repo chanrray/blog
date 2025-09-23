@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web:
+    image: blog-ap:5.6.19
+    ports:
+      - 15881:80
+    networks:
+      blog:
+        ipv4_address: 172.20.0.3
+    depends_on:
+      - db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 15m
+
+  db:
+    image: blog-m:10.1.10
+    networks:
+      blog:
+        ipv4_address: 172.20.0.4
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 105m
+
+networks:
+  blog:
+    external: true
+
+

@@ -1,0 +1,13 @@
+FROM mariadb:10.1.10 as builder
+
+COPY mysql.tar.gz /tmp
+RUN tar -xzf /tmp/mysql.tar.gz -C /var/lib/mysql --strip-components=1
+
+FROM mariadb:10.1.10
+
+COPY --from=builder /var/lib/mysql /var/lib/mysql
+COPY add-web-ip.sql /tmp
+RUN chown mysql:mysql /var/lib/mysql
+
+EXPOSE 3306
+CMD ["sh", "-c", "mysqld & sleep 45; [ -f /tmp/add-web-ip.sql ] && mysql -u root -p'chenrui19950501$' < /tmp/add-web-ip.sql && rm /tmp/add-web-ip.sql; wait"]

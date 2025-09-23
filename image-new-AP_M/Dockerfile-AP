@@ -1,0 +1,15 @@
+FROM php:5.6.19-apache as builder
+
+COPY htdocs.tar.gz /tmp
+WORKDIR /var/www/html/
+RUN tar -xzf /tmp/htdocs.tar.gz -C ./ --strip-components=1 && \
+    sed -i 's/localhost/172.20.0.4/' config.php && \
+    chmod 777 /var/www/html/count.txt
+
+FROM php:5.6.19-apache
+
+RUN docker-php-ext-install mysql
+COPY --from=builder /var/www/html/ /var/www/html/
+
+EXPOSE 80
+CMD ["apache2-foreground"]
