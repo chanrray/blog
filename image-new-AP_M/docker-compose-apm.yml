@@ -2,8 +2,6 @@ version: '3'
 services:
   web:
     image: blog-ap:5.6.19
-    ports:
-      - 15881:80
     networks:
       blog:
         ipv4_address: 172.20.0.3
