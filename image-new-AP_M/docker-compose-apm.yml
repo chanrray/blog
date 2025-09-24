@@ -11,7 +11,7 @@ services:
       resources:
         limits:
           cpus: '0.01'
-          memory: 45m
+          memory: 65m
 
   db:
     image: blog-m:10.1.10
