@@ -1,0 +1,2 @@
+1.adjust memory limit
+2.change waifu-tips api url
