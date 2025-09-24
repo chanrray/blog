@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/javascript; charset=utf-8');
 session_start();//定义session，同一IP登录不累加
 $filepath = 'count.txt';
 $_SESSION['temp'] = 0;
