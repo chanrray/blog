@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     image: blog-ap:5.6.19
+    restart: unless-stopped
     networks:
       blog:
         ipv4_address: 172.20.0.3
@@ -15,6 +16,7 @@ services:
 
   db:
     image: blog-m:10.1.10
+    restart: unless-stopped
     networks:
       blog:
         ipv4_address: 172.20.0.4
@@ -22,7 +24,7 @@ services:
       resources:
         limits:
           cpus: '0.01'
-          memory: 105m
+          memory: 55m
 
 networks:
   blog:
