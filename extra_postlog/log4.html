@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>rancher流水线无法绑定gitlab</title>
+<meta name="keywords" content="rancher流水线无法绑定gitlab" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="../css/postlog.css"/>
+<link href="../css/SyntaxHighlighter.css" rel="stylesheet">
+<style>
+body{
+background-color:transparent;
+}
+</style>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<style>
+#main{
+border:1px solid white;}
+</style>
+</head>
+
+<body>
+<div id="main" style="height:800px">
+	<h2 align="center">rancher流水线无法绑定gitlab</h2>
+	</br></br>
+	问题描述：gitlab从version 12升级到13后，rancher pipeline无法绑定gitlab的webhook</br></br>
+    问题原因：rancher对oAuth2.0 token有大小写严格判断</br></br>
+	解决办法：在发起请求的客户端抓包修改token type为小写</br></br>
+	注意事项：0.export http_proxy部分应用无效需修改iptables拦截流量才能进行抓包。</br>
+	&nbsp;&nbsp;1.SNAT MASQUERADE </br>&nbsp;&nbsp;2.FORWARD ACCEPT </br>&nbsp;&nbsp;3.DNAT不能与CATTLE_PREROUTING端口重复</br>
+	</br>
+
+<!-- 代码模板 <div class="dp-highlighter">
+	<ol start="1" class="dp-j">
+	<li>aaa黑色</li>
+	<li>ccc<span class="string">ccc蓝色ccc</span></li>  
+	<li><span class="imp">zzz红色</span></li>
+	</ol>
+</div>  -->
+
+
+
+
+</div>  
+</body>
+</html>

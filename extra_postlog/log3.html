@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>docker的iptables规则覆盖fail2ban</title>
+<meta name="keywords" content="docker的iptables规则覆盖fail2ban" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="../css/postlog.css"/>
+<link href="../css/SyntaxHighlighter.css" rel="stylesheet">
+<style>
+body{
+background-color:transparent;
+}
+</style>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<style>
+#main{
+border:1px solid white;}
+</style>
+</head>
+
+<body>
+<div id="main"  style="height:800px">
+	<h2 align="center">docker的iptables规则覆盖fail2ban</h2>
+	</br></br>
+ 	问题原因：重启docker服务后iptables规则顺序变更影响fail2ban</br></br>
+	解决办法：docker重启脚本里加上重启fail2ban命令</br></br>
+	</br>
+
+<!-- 代码模板 <div class="dp-highlighter">
+	<ol start="1" class="dp-j">
+	<li>aaa黑色</li>
+	<li>ccc<span class="string">ccc蓝色ccc</span></li>  
+	<li><span class="imp">zzz红色</span></li>
+	</ol>
+</div>  -->
+
+
+<div class="dp-highlighter">
+	<ol start="1" class="dp-j">
+	<li>systemctl edit docker.service</li>
+	<li>[Service]</li>
+	<li>ExecStartPost=/bin/systemctl restart fail2ban</li>
+	<li>systemctl restart docker</li>
+	</ol>
+</div> 
+
+</div>  
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>fiddler抓包修改拉取代码请求报500</title>
+<meta name="keywords" content="fiddler抓包修改拉取代码请求报500" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="../css/postlog.css"/>
+<link href="../css/SyntaxHighlighter.css" rel="stylesheet">
+<style>
+body{
+background-color:transparent;
+}
+</style>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<style>
+#main{
+border:1px solid white;}
+</style>
+</head>
+
+<body>
+<div id="main">
+	<h2 align="center">fiddler抓包修改拉取代码请求报500</h2>
+	</br></br>
+	问题出现：根据之前问题手动修改抓包，按预期应该正常运行，实际请求报错。</br></br>
+    解题过程：在raw里修改token插入了肉眼看不见的字符导致content-length变了。</br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;与charles对比hex值不一样。改为在hex里修改。开工单提交fiddler bug。</br></br>
+	注意事项：与拦截流量需要启用透明代理无关，服务端抓fiddler包header和ip无异常</br></br>
+	<a href="https://feedback.telerik.com/fiddler/1697979-change-authorization-by-raw-fiddler-inserted-invisible-characters">https://feedback.telerik.com/fiddler/1697979-change-authorization-by-raw-fiddler-inserted-invisible-characters</a></br></br>
+	
+	<a href="../images/postlog/7/fiddler.png" target="_blank">
+	<img src="../images/postlog/7/fiddler.png" style="margin-left:80px;"></img></a>
+	</br></br>
+	
+<!-- 代码模板 <div class="dp-highlighter">
+	<ol start="1" class="dp-j">
+	<li>aaa黑色</li>
+	<li>ccc<span class="string">ccc蓝色ccc</span></li>  
+	<li><span class="imp">zzz红色</span></li>
+	</ol>
+</div>  -->
+
+
+
+
+</div>  
+</body>
+</html>
