@@ -10,4 +10,16 @@ COPY add-web-ip.sql /tmp
 RUN chown mysql:mysql /var/lib/mysql
 
 EXPOSE 3306
-CMD ["sh", "-c", "mysqld & sleep 45; [ -f /tmp/add-web-ip.sql ] && mysql -u root -p'chenrui19950501$' < /tmp/add-web-ip.sql && rm /tmp/add-web-ip.sql; wait"]
+CMD ["sh", "-c", "\
+  mysqld & \
+  for i in $(seq 1 90); do \
+    mysqladmin -h 127.0.0.1 -uroot -p'chenrui19950501$' ping >/dev/null 2>&1 && break; \
+    sleep 2; \
+  done; \
+  if [ -f /tmp/add-web-ip.sql ]; then \
+    mysql -h 127.0.0.1 -uroot -p'chenrui19950501$' < /tmp/add-web-ip.sql \
+      && echo 'INIT SQL OK' || echo 'INIT SQL FAILED'; \
+    mysql -h 127.0.0.1 -uroot -p'chenrui19950501$' -e 'SELECT User,Host FROM mysql.user;'; \
+    rm -f /tmp/add-web-ip.sql; \
+  fi; \
+  wait"]
