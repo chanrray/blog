@@ -6,7 +6,7 @@
 +-----------------------------------------------------------------------
 */
 define('WEB_TITLE','老王的留言板');	#留言板名称
-define('WEB_SERVER','localhost');	#数据库服务器
+define('WEB_SERVER','172.20.0.4');	#数据库服务器
 define('WEB_USER','root');	#数据库用户名
 define('WEB_PWD','chenrui19950501$');	#数据库密码
 define('WEB_DB','board');	#数据库名称
